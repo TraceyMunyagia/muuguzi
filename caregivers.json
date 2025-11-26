@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Alice N.",
+    "qualifications": [
+      "Registered Nurse",
+      "Dementia Care Certification"
+    ],
+    "focus_conditions": [
+      "dementia",
+      "alzheimers"
+    ],
+    "location": "Nairobi",
+    "gender": "female",
+    "is_available": true
+  },
+  {
+    "id": 2,
+    "name": "John M.",
+    "qualifications": [
+      "Professional Caregiver",
+      "Elderly Care"
+    ],
+    "focus_conditions": [
+      "dementia",
+      "vascular"
+    ],
+    "location": "Mombasa",
+    "gender": "male",
+    "is_available": true
+  },
+  {
+    "id": 3,
+    "name": "Sarah K.",
+    "qualifications": [
+      "Enrolled Nurse",
+      "Home-Based Care"
+    ],
+    "focus_conditions": [
+      "dementia"
+    ],
+    "location": "Nairobi",
+    "gender": "female",
+    "is_available": false
+  }
+]
