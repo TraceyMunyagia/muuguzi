@@ -1,27 +1,233 @@
-# muuguzi_app
+Muuguzi – AI-Powered Dementia Support & Caregiver Matching System
 
-A new Flutter project.
+Muuguzi is an intelligent mobile and backend system that supports dementia patients, caregivers, and nursing homes through AI-powered predictions, caregiver matching, reminders, and patient management.
+The system integrates a Flutter mobile app, a Flask backend, and Firebase Firestore to deliver a complete end-to-end solution.
 
-## Getting Started
+🚀 Features
+🧠 1. ML-Based Survival Prediction
 
-This project is a starting point for a Flutter application.
+Uses:
 
-A few resources to get you started if this is your first Flutter project:
+MMSE score (0–30)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+FAST stage (1–7)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Comorbidities
 
-## Backend evaluation (placeholder)
+Neurological symptoms
 
-A minimal, dependency-free evaluation script lives in `backend/evaluate_model.py`. It uses a toy rule-based model and embedded dataset so you can print an accuracy metric locally. Run:
+Respiratory issues
 
-```bash
-cd backend
+Demographics
+
+Model outputs:
+
+Survival score
+
+Survival category (High / Medium / Low)
+
+Personalized recommendations
+
+👩‍⚕️ 2. Caregiver Matching
+
+Matches patients with caregivers based on:
+
+Location
+
+Preferred gender
+
+Preferred availability (day/night)
+
+Caregiver qualifications
+
+Supports:
+
+Private caregivers
+
+Nursing home caregivers
+
+Admin caregiver management
+
+📅 3. Smart Reminder System
+
+Add medical or appointment reminders
+
+Calendar view
+
+Local notifications
+
+Firestore sync
+
+👤 4. Patient Module
+
+Login & Sign Up
+
+View prediction history
+
+Submit caregiver matching request
+
+Manage reminders
+
+View assigned caregiver
+
+🧑‍⚕️ 5. Caregiver Module
+
+Private caregivers can:
+
+Update work info
+
+View matched patients
+
+Manage profile
+
+Nursing homes can:
+
+Add caregivers
+
+Edit caregivers
+
+View matched patients
+
+🧩 System Architecture
+Frontend
+
+Flutter (Dart)
+
+Supports Android, iOS, Web, Windows, macOS
+
+Backend
+
+Flask (Python) REST API
+
+Endpoints:
+
+/api/predict_survival
+
+/api/match_caregivers
+
+/api/admin/caregivers
+
+Machine Learning
+
+Scikit-learn models
+
+Trained using:
+
+Cleaned dementia dataset
+
+Caregiver–patient matching data
+
+Includes model validation & testing scripts
+
+Database
+
+Firebase Firestore
+
+Collections:
+
+patients
+
+caregivers
+
+reminders
+
+predictions
+
+matches
+
+admin
+
+📂 Project Structure
+/frontend_flutter/
+    ├── lib/
+    ├── android/
+    ├── ios/
+    ├── web/
+    ├── pubspec.yaml
+
+/backend_flask/
+    ├── app.py
+    ├── models/
+    ├── train_model.py
+    ├── saved_models/
+    ├── requirements.txt
+
+⚙️ Running the Project
+1. Run the Backend (Flask)
+cd backend_flask
+pip install -r requirements.txt
+python app.py
+
+
+Server runs on:
+
+http://127.0.0.1:5000
+
+2. Run the Flutter App
+cd frontend_flutter
+flutter pub get
+flutter run
+
+
+Make sure to update:
+
+lib/services/api_service.dart
+
+
+Set:
+
+static const String baseUrl = 'http://10.0.2.2:5000'; // Android emulator
+
+
+For physical devices, replace with your LAN IP.
+
+📊 Model Training
+
+To retrain the AI model:
+
+python train_model.py
+
+
+Outputs:
+
+survival_model.pkl
+
+scaler.pkl
+
+matching_model.pkl
+
+Stored in /saved_models.
+
+🧪 Model Evaluation
+
+Run:
+
 python evaluate_model.py
-```
 
-Swap out the toy model and `DATASET` with your real model and evaluation data when ready. 
+
+Displays:
+
+Accuracy
+
+Confusion matrix
+
+Test performance
+
+🔐 Authentication
+
+Uses Firebase Authentication:
+
+Email + password for patients
+
+Email + password for caregivers
+
+Admin login for nursing homes
+
+🔧 Tech Stack
+Component	Technology
+Frontend	Flutter
+Backend	Flask
+Models	scikit-learn
+Database	Firebase Firestore
+Auth	Firebase Auth
+Notifications	flutter_local_notifications
